@@ -18,7 +18,7 @@ export const protect = async (req, res, next) => {
 
     if (!token) {
       return res.status(401).json({
-        success: false,
+        success: true,
         message: "Unauthorized - no token provided",
       })
     }
