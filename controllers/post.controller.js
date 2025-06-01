@@ -17,6 +17,7 @@ export const createPost = async (req, res) => {
     })
     await newPost.save()
 
+
     // Populate author details for the response
     const populatedPost = await Post.findById(newPost._id).populate("author", "name avatar")
 
@@ -27,6 +28,7 @@ export const createPost = async (req, res) => {
     })
   } catch (error) {
     console.error("Error creating post:", error)
+    console.log("Error creating post:", error)
     res.status(500).json({ success: false, message: "Failed to create post", error: error.message })
   }
 }
