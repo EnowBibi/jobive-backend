@@ -21,8 +21,8 @@ router.get("/:id", getPostById)
 router.get("/user/:userId", getUserPosts)
 
 // Protected routes
-router.post("/", protect, upload.array("images", 5), createPost)
-router.put("/:id", protect, upload.array("images", 5), updatePost)
+router.post("/", upload.array("images", 5), createPost)
+router.put("/:id", upload.array("images", 5), updatePost)
 router.delete("/:id", protect, deletePost)
 router.post("/:id/like", protect, likePost)
 router.post("/:id/comments", protect, addComment)
